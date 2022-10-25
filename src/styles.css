@@ -1,0 +1,140 @@
+main {
+  border: 1px solid #ffffff;
+  width: 50%;
+  margin: 0 auto;
+  background: linear-gradient(2deg, #519fbb, #c4f1f7);
+  font-family: "Lato", sans-serif;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.input-search {
+  border: none;
+  border-radius: 20px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #ffffff;
+}
+
+.search-icon {
+  margin-left: 550px;
+  margin-top: 10px;
+  position: absolute;
+  color: #000000;
+}
+
+.search-button {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.search-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+}
+
+.weather-app {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+p.date-time {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #e5e5e5;
+  font-weight: 400;
+  word-spacing: 5px;
+}
+
+p.temperature {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 30px;
+  color: #e5e5e5;
+  font-weight: 400;
+  color: #272142;
+}
+
+.metric-unit,
+.imperial-unit {
+  margin-top: 2px;
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  color: #272142;
+}
+
+h3 {
+  color: #272142;
+}
+
+ul {
+  color: #272142;
+  font-size: 22px;
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.forecast {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.forecast:last-child {
+  margin-bottom: 0;
+}
+
+.forecast-degree {
+  color: #e5e5e5;
+  font-size: 18px;
+}
+
+.left-container {
+  width: 250px;
+  height: auto;
+}
+
+.left-container-temperature {
+  display: flex;
+}
+
+.right-container {
+  margin-right: 60px;
+}
+
+.days-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 50px 0 50px;
+}
+
+.days {
+  text-align: center;
+}
+
+.icon {
+  width: 75px;
+  height: auto;
+  align-self: center;
+}
