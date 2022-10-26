@@ -59,7 +59,7 @@ p.date-time {
 }
 
 p.temperature {
-  margin-top: 0;
+  margin-top: 18px;
   margin-bottom: 0;
   font-size: 30px;
   color: #e5e5e5;
@@ -69,13 +69,17 @@ p.temperature {
 
 .metric-unit,
 .imperial-unit {
-  margin-top: 2px;
+  margin-top: 16px;
   margin-left: 8px;
   font-size: 18px;
 }
 
-.description {
-  font-size: 22px;
+.metric-unit:hover {
+  color: #e5e5e5;
+}
+
+.imperial-unit:hover {
+  color: #e5e5e5;
 }
 
 h1 {
@@ -98,6 +102,10 @@ ul {
 
 li {
   list-style: none;
+}
+
+#forecast::first-letter {
+  text-transform: capitalize;
 }
 
 .forecast {
@@ -127,6 +135,10 @@ li {
   margin-right: 60px;
 }
 
+span {
+  padding-left: 5px;
+}
+
 .days-container {
   display: flex;
   justify-content: space-between;
@@ -141,4 +153,10 @@ li {
   width: 75px;
   height: auto;
   align-self: center;
+}
+
+.top-icon {
+  width: 75px;
+  height: auto;
+  margin-left: -15px;
 }
