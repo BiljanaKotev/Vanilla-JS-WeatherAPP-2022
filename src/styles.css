@@ -74,6 +74,10 @@ p.temperature {
   font-size: 18px;
 }
 
+.description {
+  font-size: 22px;
+}
+
 h1 {
   font-size: 36px;
   margin-top: 0;
