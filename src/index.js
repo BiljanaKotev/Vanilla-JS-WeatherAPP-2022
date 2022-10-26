@@ -28,6 +28,35 @@ function formatDate(date) {
 // let realDate = new Date();
 // formatDate(realDate);
 
+function displayForecast() {
+  let forecastContainer = document.querySelector("#forecast-container");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = ` <div id="forecast-container" class="forecast-container">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      
+        <div class="days">
+          <h3 id="weekdays">${day}</h3>
+          <p class="forecast-degree">27°C</p>
+          <img
+            id="weather-icon"
+            class="icon"
+            src="http://openweathermap.org/img/wn/03d@2x.png"
+            alt="clouds"
+          />
+          </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastContainer.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function getWeather(response) {
   console.log(response);
   let temp = document.querySelector("#temperature");
@@ -91,3 +120,4 @@ let celsiusClick = document.querySelector("#celsius");
 celsiusClick.addEventListener("click", changeDegreeUnitToCelsius);
 
 search("Ohrid");
+displayForecast();
