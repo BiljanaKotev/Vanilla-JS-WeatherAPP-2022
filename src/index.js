@@ -79,6 +79,7 @@ function getWeather(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  celsiusTemp = response.data.temperature.current;
 }
 
 // ----------------------------------------------------------------------
