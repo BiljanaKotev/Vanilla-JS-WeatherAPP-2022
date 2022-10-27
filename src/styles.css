@@ -24,6 +24,7 @@ main {
   box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px;
   cursor: pointer;
   padding: 10px 20px;
+  width: 35vw;
 }
 
 .search-icon,
@@ -32,7 +33,7 @@ main {
 }
 
 .search-icon {
-  margin: 10px 0 0 550px;
+  margin: 0.7vw 0 0 35vw;
   position: absolute;
 }
 
@@ -146,4 +147,53 @@ span {
   margin-left: -15px;
   width: 75px;
   height: auto;
+}
+
+footer {
+  text-align: center;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1180px) {
+  .forecast-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .weather-app {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-container {
+    text-align: center;
+  }
+
+  h1 {
+    margin-left: 0;
+  }
+
+  .left-container-temperature {
+    justify-content: center;
+  }
+
+  .right-container {
+    margin-right: 0;
+  }
+
+  .forecast-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .search-button {
+    display: block;
+    margin: 10px auto;
+  }
 }
