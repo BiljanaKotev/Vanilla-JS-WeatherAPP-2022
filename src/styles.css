@@ -211,7 +211,7 @@ a:link {
   }
 }
 
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 420px) {
   .search-icon {
     margin: 2.2vw 0 0 35vw;
   }
