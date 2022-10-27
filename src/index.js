@@ -120,23 +120,22 @@ let celsiusTemp = null;
 let form = document.querySelector("#form-submit");
 form.addEventListener("submit", handleSubmit);
 
-function changeDegreeUnitToFahrenheit(event) {
-  event.preventDefault();
-  let degreeUnit = document.querySelector("#temperature");
-  let fahrenheitDegree = (celsiusTemp * 9) / 5 + 32;
-  degreeUnit.innerHTML = Math.round(fahrenheitDegree);
-}
-let fahrenheitClick = document.querySelector("#fahrenheit");
-fahrenheitClick.addEventListener("click", changeDegreeUnitToFahrenheit);
+// function changeDegreeUnitToFahrenheit(event) {
+//   event.preventDefault();
+//   let degreeUnit = document.querySelector("#temperature");
+//   let fahrenheitDegree = (celsiusTemp * 9) / 5 + 32;
+//   degreeUnit.innerHTML = Math.round(fahrenheitDegree);
+// }
+// let fahrenheitClick = document.querySelector("#fahrenheit");
+// fahrenheitClick.addEventListener("click", changeDegreeUnitToFahrenheit);
 
-function changeDegreeUnitToCelsius(event) {
-  event.preventDefault();
-  let degreeUnit = document.querySelector("#temperature");
-  degreeUnit.innerHTML = Math.round(celsiusTemp);
-}
+// function changeDegreeUnitToCelsius(event) {
+//   event.preventDefault();
+//   let degreeUnit = document.querySelector("#temperature");
+//   degreeUnit.innerHTML = Math.round(celsiusTemp);
+// }
 
-let celsiusClick = document.querySelector("#celsius");
-celsiusClick.addEventListener("click", changeDegreeUnitToCelsius);
+// let celsiusClick = document.querySelector("#celsius");
+// celsiusClick.addEventListener("click", changeDegreeUnitToCelsius);
 
 search("Ohrid");
-// displayForecast();

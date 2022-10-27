@@ -108,15 +108,6 @@ li {
   text-transform: capitalize;
 }
 
-.forecast {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-.forecast:last-child {
-  margin-bottom: 0;
-}
-
 .forecast-degree {
   color: #e5e5e5;
   font-size: 18px;
