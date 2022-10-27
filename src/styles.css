@@ -1,16 +1,21 @@
 main {
-  border: 1px solid #ffffff;
-  width: 50%;
-  margin: 0 auto;
   background: linear-gradient(2deg, #519fbb, #c4f1f7);
+  border: 1px solid #ffffff;
   font-family: "Lato", sans-serif;
+  margin: 0 auto;
+  width: 50%;
 }
 
 .search-section {
   display: flex;
-  justify-content: center;
   gap: 5px;
+  justify-content: center;
   margin-top: 20px;
+}
+
+.input-search,
+.search-button:hover {
+  background-color: #ffffff;
 }
 
 .input-search {
@@ -19,27 +24,27 @@ main {
   box-shadow: rgb(0 0 0 / 5%) 0px 0px 0px 1px;
   cursor: pointer;
   padding: 10px 20px;
-  background-color: #ffffff;
+}
+
+.search-icon,
+.search-button:hover {
+  color: #000000;
 }
 
 .search-icon {
-  margin-left: 550px;
-  margin-top: 10px;
+  margin: 10px 0 0 550px;
   position: absolute;
-  color: #000000;
 }
 
 .search-button {
-  padding: 10px 15px;
-  border-radius: 20px;
-  border: none;
-  color: #ffffff;
   background-color: #000000;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  padding: 10px 15px;
 }
 
 .search-button:hover {
-  background-color: #ffffff;
-  color: #000000;
   font-weight: 600;
 }
 
@@ -49,54 +54,45 @@ main {
   margin-top: 50px;
 }
 
-p.date-time {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 24px;
+p.date-time,
+.metric-unit:hover,
+.forecast-degree {
   color: #e5e5e5;
-  font-weight: 400;
+}
+
+p.date-time {
+  font-size: 24px;
   word-spacing: 5px;
+  font-weight: 400;
+  margin: 0 0 10px 0;
 }
 
 p.temperature {
-  margin-top: 18px;
-  margin-bottom: 0;
   font-size: 30px;
-  color: #e5e5e5;
   font-weight: 400;
-  color: #272142;
+  margin: 18px 0 0 0;
 }
 
-.metric-unit,
-.imperial-unit {
-  margin-top: 16px;
-  margin-left: 8px;
+.metric-unit {
   font-size: 18px;
-}
-
-.metric-unit:hover {
-  color: #e5e5e5;
-}
-
-.imperial-unit:hover {
-  color: #e5e5e5;
+  margin-top: 16px;
 }
 
 h1 {
-  font-size: 36px;
-  margin-top: 0;
-  margin-bottom: 10px;
   display: inline-block;
-  color: #272142;
+  font-size: 36px;
+  margin: 0 0 10 0;
 }
 
-h3 {
+h1,
+h3,
+ul,
+p.temperature {
   color: #272142;
 }
 
 ul {
-  color: #272142;
-  font-size: 22px;
+  font-size: 18px;
   padding-left: 0;
 }
 
@@ -109,7 +105,6 @@ li {
 }
 
 .forecast-degree {
-  color: #e5e5e5;
   font-size: 18px;
 }
 
@@ -132,8 +127,8 @@ span {
 
 .forecast-container {
   display: flex;
-  justify-content: space-evenly;
   gap: 60px;
+  justify-content: space-evenly;
   margin-top: 10px;
 }
 
@@ -142,13 +137,13 @@ span {
 }
 
 .icon {
+  align-self: center;
   width: 75px;
   height: auto;
-  align-self: center;
 }
 
 .top-icon {
+  margin-left: -15px;
   width: 75px;
   height: auto;
-  margin-left: -15px;
 }

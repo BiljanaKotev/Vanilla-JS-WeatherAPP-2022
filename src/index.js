@@ -35,9 +35,7 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response);
   let forecast = response.data.daily;
-  console.log(forecast);
   let forecastContainer = document.querySelector("#forecast-container");
 
   let forecastHTML = ` <div id="forecast-container" class="forecast-container">`;
@@ -69,7 +67,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  // console.log(coordinates);
   let apiKey = "be923c79304a1acdofa6t0cb040e4779";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
@@ -77,7 +74,6 @@ function getForecast(coordinates) {
 }
 
 function getWeather(response) {
-  // console.log(response);
   let temp = document.querySelector("#temperature");
   let cityName = document.querySelector("#city");
   let wind = document.querySelector("#wind-speed");
@@ -119,23 +115,5 @@ let celsiusTemp = null;
 
 let form = document.querySelector("#form-submit");
 form.addEventListener("submit", handleSubmit);
-
-// function changeDegreeUnitToFahrenheit(event) {
-//   event.preventDefault();
-//   let degreeUnit = document.querySelector("#temperature");
-//   let fahrenheitDegree = (celsiusTemp * 9) / 5 + 32;
-//   degreeUnit.innerHTML = Math.round(fahrenheitDegree);
-// }
-// let fahrenheitClick = document.querySelector("#fahrenheit");
-// fahrenheitClick.addEventListener("click", changeDegreeUnitToFahrenheit);
-
-// function changeDegreeUnitToCelsius(event) {
-//   event.preventDefault();
-//   let degreeUnit = document.querySelector("#temperature");
-//   degreeUnit.innerHTML = Math.round(celsiusTemp);
-// }
-
-// let celsiusClick = document.querySelector("#celsius");
-// celsiusClick.addEventListener("click", changeDegreeUnitToCelsius);
 
 search("Ohrid");
