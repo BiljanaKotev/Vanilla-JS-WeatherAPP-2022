@@ -189,11 +189,27 @@ a:link {
   .forecast-container {
     flex-direction: column;
   }
-}
 
-@media screen and (max-width: 968px) {
   .search-button {
     display: block;
     margin: 10px auto;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .search-icon {
+    margin: 0.9vw 0 0 35vw;
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .search-icon {
+    margin: 1.5vw 0 0 35vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search-icon {
+    margin: 2vw 0 0 35vw;
   }
 }
