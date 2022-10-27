@@ -25,31 +25,44 @@ function formatDate(date) {
   let dateTime = document.querySelector("#date-time");
   return (dateTime.innerHTML = `${day} ${currentDate} ${hours}:${minutes}`);
 }
-// let realDate = new Date();
-// formatDate(realDate);
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  console.log(response);
+  let forecast = response.data.daily;
+  console.log(forecast);
   let forecastContainer = document.querySelector("#forecast-container");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-
   let forecastHTML = ` <div id="forecast-container" class="forecast-container">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
         <div class="days">
-          <h3 id="weekdays">${day}</h3>
-          <p class="forecast-degree">27°C</p>
+          <h3 id="weekdays">${formatDay(forecastDay.time)}</h3>
+          ${index}
+          <p class="forecast-degree">${Math.round(
+            forecastDay.temperature.day
+          )}°C</p>
           <img
             id="weather-icon"
             class="icon"
-            src="http://openweathermap.org/img/wn/03d@2x.png"
+            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+              forecastDay.condition.icon
+            }.png"
             alt="clouds"
           />
           </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -61,6 +74,7 @@ function getForecast(coordinates) {
   let apiKey = "be923c79304a1acdofa6t0cb040e4779";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
+  console.log(apiUrl);
 }
 
 function getWeather(response) {
