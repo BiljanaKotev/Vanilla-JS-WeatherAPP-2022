@@ -177,6 +177,10 @@ a:link {
 }
 
 @media screen and (max-width: 793px) {
+  main {
+    width: 100vw;
+  }
+
   .weather-app {
     flex-direction: column;
     align-items: center;
@@ -195,15 +199,21 @@ a:link {
   }
 }
 
-@media screen and (max-width: 793px) {
+@media screen and (max-width: 620px) {
   .search-icon {
     margin: 1.5vw 0 0 35vw;
   }
 }
 
-@media screen and (max-width: 793px) {
+@media screen and (max-width: 498px) {
   .search-icon {
-    margin: 2vw 0 0 35vw;
+    margin: 1.5vw 0 0 35vw;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .search-icon {
+    margin: 2.2vw 0 0 35vw;
   }
 }
 
