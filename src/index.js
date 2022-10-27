@@ -28,7 +28,8 @@ function formatDate(date) {
 // let realDate = new Date();
 // formatDate(realDate);
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastContainer = document.querySelector("#forecast-container");
 
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
@@ -38,7 +39,6 @@ function displayForecast() {
     forecastHTML =
       forecastHTML +
       `
-      
         <div class="days">
           <h3 id="weekdays">${day}</h3>
           <p class="forecast-degree">27°C</p>
@@ -54,11 +54,17 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastContainer.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  // console.log(coordinates);
+  let apiKey = "be923c79304a1acdofa6t0cb040e4779";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getWeather(response) {
-  console.log(response);
+  // console.log(response);
   let temp = document.querySelector("#temperature");
   let cityName = document.querySelector("#city");
   let wind = document.querySelector("#wind-speed");
@@ -66,6 +72,7 @@ function getWeather(response) {
   let forecastDescription = document.querySelector("#forecast");
   let dateTime = document.querySelector("#date-time");
   let weatherIcon = document.querySelector("#top-icon");
+  celsiusTemp = response.data.temperature.current;
 
   temp.innerHTML = Math.round(response.data.temperature.current);
   cityName.innerHTML = response.data.city;
@@ -79,14 +86,12 @@ function getWeather(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
-  celsiusTemp = response.data.temperature.current;
+  getForecast(response.data.coordinates);
 }
-
-// ----------------------------------------------------------------------
 
 function search(city) {
   let apiKey = "be923c79304a1acdofa6t0cb040e4779";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=be923c79304a1acdofa6t0cb040e4779&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(getWeather);
 }
@@ -121,4 +126,4 @@ let celsiusClick = document.querySelector("#celsius");
 celsiusClick.addEventListener("click", changeDegreeUnitToCelsius);
 
 search("Ohrid");
-displayForecast();
+// displayForecast();
