@@ -48,7 +48,6 @@ function displayForecast(response) {
         `
         <div class="days">
           <h3 id="weekdays">${formatDay(forecastDay.time)}</h3>
-          ${index}
           <p class="forecast-degree">${Math.round(
             forecastDay.temperature.day
           )}°C</p>
